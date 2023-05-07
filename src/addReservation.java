@@ -4,13 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 
-public class ReservationFrame extends JFrame {
+public class addReservation extends JFrame {
 
     private JLabel numeroLabel, dateLabel, typeLabel, serviceDemandeLabel;
     private JTextField numeroField, dateField, typeField, serviceDemandeField;
     private JButton submitButton;
 
-    public ReservationFrame() {
+    public addReservation() {
         setTitle("Form Example");
         setSize(500, 300);
         setLocationRelativeTo(null);
@@ -73,6 +73,6 @@ public class ReservationFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        ReservationFrame form = new ReservationFrame();
+        addReservation form = new addReservation();
     }
 }
