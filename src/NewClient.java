@@ -13,7 +13,7 @@ public class NewClient extends JFrame {
         setTitle("Input Form");
         setSize(400, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Initialize the input fields
         nssField = new JTextField(10);

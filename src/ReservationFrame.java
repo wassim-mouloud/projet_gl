@@ -14,7 +14,7 @@ public class ReservationFrame extends JFrame {
         setTitle("Form Example");
         setSize(500, 300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Initialize the labels
         numeroLabel = new JLabel("Numero:");
@@ -40,8 +40,7 @@ public class ReservationFrame extends JFrame {
                 String serviceDemande = serviceDemandeField.getText();
 
                 // Validate the date using a regex
-                boolean isValidDate = Pattern.matches("(0[1-9]|[12]\\d|3[01])/(0[1-9]|1[0-2])/\\d{4}", date);
-
+                boolean isValidDate = Pattern.matches("(0[1-9]|[12]\\d|3[01])/(0[1-9]|1[0-2])/20(2[0-3]|[0-1]\\d)", date);
 
                 // Display a message dialog indicating whether the form was submitted or not
                 if (isValidDate) {

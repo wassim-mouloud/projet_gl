@@ -21,7 +21,7 @@ public class ClientInfo extends JFrame {
         setTitle("Client Info");
         setSize(500, 600);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Initialize the labels
         nssLabel = new JLabel("NSS: ");
