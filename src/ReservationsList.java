@@ -26,7 +26,7 @@ public class ReservationsList extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     // Code to display the clients list
-                    ReservationDetail reservationDetailFrame= new ReservationDetail("1234","22/12/2023","consultation", "pediatre");
+                    ReservationDetail reservationDetailFrame= new ReservationDetail("hamza","boukader","1234","22/12/2023","consultation", "pediatre");
                     reservationDetailFrame.setVisible(true);
                 }
             });
