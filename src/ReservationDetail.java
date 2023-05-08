@@ -3,18 +3,22 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class ReservationDetail extends JFrame {
-    private JLabel numeroLabel;
+    private JLabel nomLabel;
+    private JLabel prenomLabel;
+    private JLabel nssLabel;
     private JLabel dateLabel;
     private JLabel typeLabel;
     private JLabel serviceLabel;
 
     private JButton editButton;
 
-    public ReservationDetail(String numero, String date, String type, String service) {
+    public ReservationDetail(String nom,String prenom,String nss, String date, String type, String service) {
         super("Reservation Detail Frame");
 
         // Create the labels for the reservation details
-        numeroLabel = new JLabel("Numero: " + numero);
+        nomLabel = new JLabel("Nom: " + nom);
+        prenomLabel = new JLabel("Prenom: " + prenom);
+        nssLabel = new JLabel("NSS: " + nss);        
         dateLabel = new JLabel("Date: " + date);
         typeLabel = new JLabel("Type: " + type);
         serviceLabel = new JLabel("Service Demande: " + service);
@@ -31,7 +35,9 @@ public class ReservationDetail extends JFrame {
         // Add the components to the frame
         JPanel panel = new JPanel(new GridLayout(0, 1, 10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        panel.add(numeroLabel);
+        panel.add(nomLabel);
+        panel.add(prenomLabel);
+        panel.add(nssLabel);
         panel.add(dateLabel);
         panel.add(typeLabel);
         panel.add(serviceLabel);
@@ -47,14 +53,20 @@ public class ReservationDetail extends JFrame {
 
     private void showEditDialog() {
         // Show a dialog to edit the reservation details
-        JTextField numeroField = new JTextField(numeroLabel.getText().split(": ")[1]);
+        JTextField nomField = new JTextField(nomLabel.getText().split(": ")[1]);
+        JTextField prenomField = new JTextField(prenomLabel.getText().split(": ")[1]);
+        JTextField nssField = new JTextField(nssLabel.getText().split(": ")[1]);
         JTextField dateField = new JTextField(dateLabel.getText().split(": ")[1]);
         JTextField typeField = new JTextField(typeLabel.getText().split(": ")[1]);
         JTextField serviceField = new JTextField(serviceLabel.getText().split(": ")[1]);
 
         JPanel panel = new JPanel(new GridLayout(0, 1, 10, 10));
-        panel.add(new JLabel("Numero: "));
-        panel.add(numeroField);
+        panel.add(new JLabel("nom: "));
+        panel.add(nomField);
+        panel.add(new JLabel("prenom: "));
+        panel.add(prenomField);
+        panel.add(new JLabel("nss: "));
+        panel.add(nssField);
         panel.add(new JLabel("Date: "));
         panel.add(dateField);
         panel.add(new JLabel("Type: "));
@@ -72,7 +84,9 @@ public class ReservationDetail extends JFrame {
 
         if (result == JOptionPane.OK_OPTION) {
             // Update the reservation details labels with the new values
-            numeroLabel.setText("Numero: " + numeroField.getText());
+            nomLabel.setText("nom: " + nomField.getText());
+            prenomLabel.setText("prenom: " + prenomField.getText());
+            nssLabel.setText("nss: " + nssField.getText());
             dateLabel.setText("Date: " + dateField.getText());
             typeLabel.setText("Type: " + typeField.getText());
             serviceLabel.setText("Service Demande: " + serviceField.getText());
@@ -80,6 +94,6 @@ public class ReservationDetail extends JFrame {
     }
 
     public static void main(String[] args) {
-        new ReservationDetail("1234", "2023-05-07", "Type A", "Service X, Service Y");
+        new ReservationDetail("mouloud","hamza","1234", "2023-05-07", "Type A", "Service X, Service Y");
     }
 }

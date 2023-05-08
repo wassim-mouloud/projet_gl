@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 
 public class addReservation extends JFrame {
 
-    private JLabel numeroLabel, dateLabel, typeLabel, serviceDemandeLabel;
-    private JTextField numeroField, dateField, typeField, serviceDemandeField;
+    private JLabel nomLabel, prenomLabel, nssLabel, dateLabel, typeLabel, serviceDemandeLabel;
+    private JTextField nomField, prenomField, nssField, dateField, typeField, serviceDemandeField;
     private JButton submitButton;
 
     public addReservation() {
@@ -17,13 +17,17 @@ public class addReservation extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Initialize the labels
-        numeroLabel = new JLabel("Numero:");
+        nomLabel = new JLabel("Nom:");
+        prenomLabel = new JLabel("Prenom:");
+        nssLabel = new JLabel("NSS:");
         dateLabel = new JLabel("Date (dd/mm/yyyy):");
         typeLabel = new JLabel("Type:");
         serviceDemandeLabel = new JLabel("Service demande:");
 
         // Initialize the fields
-        numeroField = new JTextField(20);
+        nomField = new JTextField(20);
+        prenomField = new JTextField(20);
+        nssField = new JTextField(20);
         dateField = new JTextField(20);
         typeField = new JTextField(20);
         serviceDemandeField = new JTextField(20);
@@ -34,7 +38,9 @@ public class addReservation extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Get the values entered by the user
-                String numero = numeroField.getText();
+                String nom = nomField.getText();
+                String prenom = prenomField.getText();
+                String nss = nssField.getText();
                 String date = dateField.getText();
                 String type = typeField.getText();
                 String serviceDemande = serviceDemandeField.getText();
@@ -44,7 +50,7 @@ public class addReservation extends JFrame {
 
                 // Display a message dialog indicating whether the form was submitted or not
                 if (isValidDate) {
-                    JOptionPane.showMessageDialog(null, "Form submitted:\nNumero: " + numero + "\nDate: " + date + "\nType: " + type + "\nService demande: " + serviceDemande, "Success", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Form submitted:\nNom: " + nom + "\nPrenom: " + prenom + "\nNSS: " + nss + "\nDate: " + date + "\nType: " + type + "\nService demande: " + serviceDemande, "Success", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid date format. Please enter the date in the format dd/mm/yyyy", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -54,8 +60,12 @@ public class addReservation extends JFrame {
         // Initialize the JPanel and add the components
         JPanel panel = new JPanel(new GridLayout(0, 2, 10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Add padding        
-        panel.add(numeroLabel);
-        panel.add(numeroField);
+        panel.add(nomLabel);
+        panel.add(nomField);
+        panel.add(prenomLabel);
+        panel.add(prenomField);
+        panel.add(nssLabel);
+        panel.add(nssField);
         panel.add(dateLabel);
         panel.add(dateField);
         panel.add(typeLabel);
@@ -73,6 +83,6 @@ public class addReservation extends JFrame {
     }
 
     public static void main(String[] args) {
-        addReservation form = new addReservation();
+        addReservation form= new addReservation();
     }
 }
