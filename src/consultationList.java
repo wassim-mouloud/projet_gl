@@ -8,7 +8,7 @@ public class consultationList extends JFrame {
     setTitle("Liste des Consultations");
     setSize(600, 800);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     // Create a scroll pane for the consultation panels
     JScrollPane scrollPane = new JScrollPane();

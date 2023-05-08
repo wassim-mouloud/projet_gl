@@ -9,7 +9,7 @@ public class FeedbackList extends JFrame {
         setTitle("Liste des Feedbacks");
         setSize(400, 600);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         // Create a scroll pane for the feedback panels
         JScrollPane scrollPane = new JScrollPane();

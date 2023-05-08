@@ -21,7 +21,7 @@ public class ClientList extends JFrame {
         // Add 30 client panels to the panel
         // Add 30 client panels to the panel
 for (int i = 1; i <= 30; i++) {
-    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 40, 10));
+    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 10));
     panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Add padding
 
     // Add a label with the client name
